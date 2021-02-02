@@ -2,7 +2,10 @@ import React from 'react'
 import Nav from './Nav'
 import About from './components/About'
 import Contact from './components/Contact'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Cards from './components/Cards'
+import Footer from './components/Footer'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import './App.css';
 
 function App() {
@@ -13,7 +16,7 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
-
+        <Footer />
       </div>
     </Router>
   );
@@ -21,10 +24,8 @@ function App() {
 
 const Home = () => (
   <div>
-    <h1>Home Page</h1>
+    <Cards />
+
   </div>
 )
-
-
-
 export default App;
