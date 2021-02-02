@@ -1,7 +1,7 @@
 import React from 'react'
 import Nav from './Nav'
-import About from './components/About'
-import Contact from './components/Contact'
+import AboutUs from './components/AboutUs'
+import AddInfo from './components/AddInfo'
 import Cards from './components/Cards'
 import Footer from './components/Footer'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
@@ -14,8 +14,8 @@ function App() {
       <div className="App">
         <Nav />
         <Route path="/" exact component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
+        <Route path="/aboutus" component={AboutUs} />
+        <Route path="/addinfo" component={AddInfo} />
         <Footer />
       </div>
     </Router>

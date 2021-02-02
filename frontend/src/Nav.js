@@ -10,11 +10,11 @@ function Nav() {
         <nav>
             <h3>LoGo</h3>
             <ul className="nav-links">
-                <Link style={navStyle} to="/about">
-                    <li>About</li>
+                <Link style={navStyle} to="/AddInfo">
+                    <li>Add Info</li>
                 </Link>
-                <Link style={navStyle} to="/contact">
-                    <li >Contact</li>
+                <Link style={navStyle} to="/About Us">
+                    <li >About Us</li>
                 </Link>
 
             </ul>
