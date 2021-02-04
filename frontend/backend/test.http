@@ -2,9 +2,10 @@ POST http://localhost:4000/app/signup
 Content-Type: application/json
 
 {
-    "fullName":"fari",
-    "username":"Eashaas",
-    "email":"Eashazaman",
+    "fullName":"farid",
+    "username":"test",
+    "email":"tes1",
+    "phone":"0465926543",
     "password":"123456"
 }
 

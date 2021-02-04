@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Navbar } from 'react-bootstrap';
 
 function Nav() {
 
@@ -7,18 +8,21 @@ function Nav() {
         color: 'white'
     }
     return (
-        <nav>
-            <h3>LoGo</h3>
-            <ul className="nav-links">
+        <Navbar >
+            <h3>Cnavas</h3>
+            <nav className="nav-links">
+                <Link style={navStyle} to="/">
+                    <ul>Home</ul>
+                </Link>
                 <Link style={navStyle} to="/AddInfo">
-                    <li>Add Info</li>
+                    <ul>Add Info</ul>
                 </Link>
                 <Link style={navStyle} to="/About Us">
-                    <li >About Us</li>
+                    <ul>About Us</ul>
                 </Link>
 
-            </ul>
-        </nav>
+            </nav>
+        </Navbar>
     )
 }
 export default Nav;

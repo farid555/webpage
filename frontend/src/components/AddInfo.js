@@ -1,4 +1,5 @@
 import React, { Component } from 'react' //class based component
+import { Container } from 'react-bootstrap'
 import axios from 'axios'
 
 
@@ -10,12 +11,15 @@ class AddInfo extends Component {
             fullName: '',
             username: '',
             email: '',
-            password: ''
+            phone: '',
+            password: '',
+
 
         }
         this.changeFullName = this.changeFullName.bind(this)
         this.changeEmail = this.changeEmail.bind(this)
         this.changeUsername = this.changeUsername.bind(this)
+        this.changePhone = this.changePhone.bind(this)
         this.changePassword = this.changePassword.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
     }
@@ -37,6 +41,11 @@ class AddInfo extends Component {
             email: event.target.value
         })
     }
+    changePhone(event) {
+        this.setState({
+            phone: event.target.value
+        })
+    }
     changePassword(event) {
         this.setState({
             password: event.target.value
@@ -51,8 +60,10 @@ class AddInfo extends Component {
             fullName: this.state.fullName,
             username: this.state.username,
             email: this.state.email,
-            password: this.state.password,
+            phone: this.state.phone,
+            password: this.state.password
         }
+
         axios.post('http://localhost:4000/app/signup', registered)
             .then(response => console.log(response.data))
 
@@ -60,6 +71,7 @@ class AddInfo extends Component {
             fullName: '',
             username: '',
             email: '',
+            phone: '',
             password: ''
         })
     }
@@ -68,43 +80,57 @@ class AddInfo extends Component {
     render() {
         return (
 
-            <div>
+            <Container>
+
+                <div>
 
 
-                <main className='py-3'>
-                    <div className='container'>
-                        <div className='form-div'>
+                    <main className='py-3'>
+                        <div className='container'>
+                            <div className='form-div'>
+                                <h3>Please fill up the form</h3>
+                                <br />
+                                <form onSubmit={this.onSubmit}>
 
-                            <form onSubmit={this.onSubmit}>
+                                    <input type='text'
+                                        placeholder='Enter your First Name'
+                                        onChange={this.changeFullName}
+                                        value={this.state.fullName}
+                                        className='form-control form-group'
+                                    />
 
-                                <input type='text'
-                                    placeholder='Full Name'
-                                    onChange={this.changeFullName}
-                                    value={this.state.fullName}
-                                    className='form-control form-group'
-                                />
+                                    <input type='text'
+                                        placeholder='Enter your last Name'
+                                        onChange={this.changeUsername}
+                                        value={this.state.username}
+                                        className='form-control form-group'
+                                    />
 
-                                <input type='text'
-                                    placeholder='Username'
-                                    onChange={this.changeUsername}
-                                    value={this.state.username}
-                                    className='form-control form-group'
-                                />
+                                    <input type='text'
+                                        placeholder='Enter your Phone number'
+                                        onChange={this.changePhone}
+                                        value={this.state.phone}
+                                        className='form-control form-group'
+                                    />
 
-                                <input type='text'
-                                    placeholder='E-mail'
-                                    onChange={this.changeEmail}
-                                    value={this.state.email}
-                                    className='form-control form-group'
-                                />
+                                    <input type='text'
+                                        placeholder='Enter your e-mail'
+                                        onChange={this.changeEmail}
+                                        value={this.state.email}
+                                        className='form-control form-group'
+                                    />
+                                    <div>
+                                        <input type="submit" className="btn btn-outline-success" value='Submit' />
 
-                                <input type="submit" className="btn btn-danger btn-block" value='Submit' />
-                            </form>
+                                    </div>
+                                </form>
 
-                        </div  >
-                    </div>
-                </main>
-            </div>
+                            </div  >
+                        </div>
+                    </main>
+                </div>
+
+            </Container>
         )
     }
 }

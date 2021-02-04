@@ -20,6 +20,7 @@ router.post('/signup', async (req, res) => {
         fullName: req.body.fullName,
         username: req.body.username,
         email: req.body.email,
+        phone: req.body.phone,
         password: securePassword
     })
     try {
